@@ -1,6 +1,6 @@
 /* Software 1073 Example Program
 Written and debugged for use on the Arduino boebot platform
-last updated: 8/15/14
+last updated: 9/10/14
 
 Program: Drive the robot forward until the ultrasonic sensor sees a wall
 */
@@ -9,8 +9,8 @@ Program: Drive the robot forward until the ultrasonic sensor sees a wall
 #include <NewPing.h>
 
 //Ultrasonic Definitions using the Newping library
-#define TRIGGER_PIN  8  // Arduino pin tied to trigger pin on the ultrasonic sensor.
-#define ECHO_PIN     7  // Arduino pin tied to echo pin on the ultrasonic sensor.
+#define TRIGGER_PIN  12  // Arduino pin tied to trigger pin on the ultrasonic sensor.
+#define ECHO_PIN     8  // Arduino pin tied to echo pin on the ultrasonic sensor.
 #define MAX_DISTANCE 200 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
 //NewPing method sonar
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
@@ -18,7 +18,7 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and
 Servo left;  
 Servo right;  //creates two servo objects
 
-int distDelay = 40; //time in ms to wait for ultrasonic to receive
+int distDelay = 50; //time in ms to wait for ultrasonic to receive
 int threshHold = 15; //dist to drive to
 
 int getDist(){
@@ -42,7 +42,7 @@ void drive(){
 
 void setup(){ //setup runs just once
   left.attach(10);
-  right.attach(2); //mounts each servo on their respective digital pin
+  right.attach(9); //mounts each servo on their respective digital pin
 }
 void loop(){ //loop runs over and over again
 	drive();

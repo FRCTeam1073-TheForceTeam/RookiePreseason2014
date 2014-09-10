@@ -1,6 +1,6 @@
 /* Software 1073 Example Program
 Written and debugged for use on the Arduino boebot platform
-last updated: 8/14/14
+last updated: 9/10/14
 
 Program: Use the potentiometer to control the speed of the robot
 */
@@ -22,8 +22,8 @@ void speedControl(){   //creates a method called speedcontrol
 }
 
 void setup(){ //setup runs just once
-  left.attach(3);
-  right.attach(6); //mounts each servo on their respective digital pin
+  left.attach(10);
+  right.attach(9); //mounts each servo on their respective digital pin
 
   
 }
