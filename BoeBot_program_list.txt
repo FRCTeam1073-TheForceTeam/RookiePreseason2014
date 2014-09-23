@@ -8,7 +8,6 @@ BoeBot Programs listing:
 2.1 – 2.2: THE BASICS – Manipulating LEDs and reading sensors
 - 	Toggle an LED using the button
 - 	Dim an LED using the potentiometer
--
 
 3.1 – 3.4 THE BASICS, Part 3 – Manipulating the Servo motors with basic code:
 -	Drive the robot a direction for x seconds 
@@ -16,17 +15,16 @@ BoeBot Programs listing:
 -	Toggle the Servos using the button
 -	Control the speed of the robot using a potentiometer 
 
-4.1	– 4.2 MODERATE Programs – Using more sensors, and more complex functions:
+4.1 – 4.2 MODERATE Programs – Using more sensors, and more complex functions:
 -	Drive the robot until the ultrasonic sees a wall 
--	While drive the robot, display an led (pattern?) and have the pattern change (and speaker beep?) when the robot sees a wall 
+-	While drive the robot, display an led (pattern) and have and speaker beep when the robot sees a wall 
 
-5.1 – 5.2 MODERATE Programs, Part 2 – Using the line following sensors (need to be mounted
+5.1 – 5.4 DIFFICULT Programs – Utilize the line following sensors and do more complex tasks with the ultrasonic
 -	Have the robot drive forward until it detects a change in values (black line)
--	Have the robot follow a line using one of the line following sensors
+-	Have the robot follow a line using the line following sensors
+-	Have the robot follow a line using the line following sensors and calibrate itself (determine its own black/white values)
+-	Have the robot drive forward until it sees a wall, and then determine which direction is clear and travel that direction
 
-6.1 – 6.3 DIFFICULT Programs – Using multiple sensors and what has been learned in the previous lessons, application of knowledge for complex tasks
--	Use both line sensors to follow a line
--	Use both line sensors to follow a line AND have the robot calibrate the sensors itself (instead of recording value and using it as limit in code).
--	Using the ultrasonic, have the robot drive until it sees something AND then check the directions around it (turn for x seconds…), then travels down the clear path
-ULTRA CHALLENGE  (7.1) 
-Create a remote control BoeBot that is capable of traveling based on registered keystrokes through PuTTy, and provide (toggle-able) sensor feeds to the driver (Ex. Turn on/off distance sensor feed, etc)
+6.1 FINAL CHALLENGE Programs – Using multiple sensors and what has been learned in the previous lessons, application of knowledge for complex tasks
+-	Still in progress (being developed)
+	Probably going to be: Create a remote control BoeBot that is capable of traveling based on registered keystrokes through PuTTy, and provide (toggle-able) sensor feeds to the driver (Ex. Turn on/off distance sensor feed, etc)

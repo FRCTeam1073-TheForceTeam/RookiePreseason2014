@@ -10,8 +10,8 @@ D11 = piezo buzzer
 D12 = trigger pin on ultrasonic
 
 A5 = analog potentiometer reading
-A0 = left light sensor reading
-A1 = right light sensor reading
+A0 = left light sensor reading (needs to be mounted)
+A1 = right light sensor reading (needs to be mounted)
 BoeBot Hardware Listing:
 -	1x arduino
 -	1x breadboard
