@@ -5,9 +5,11 @@ Method stubs are pre-made. add your own code to complete the challenge!
 Program Task: Turn on an LED at pin 5
 Feel free to view the example program within the same folder if you need help!
 */
+int led = 5;
 
 void setup(){
-  //your code goes here
+    pinMode(led, OUTPUT);
+    digitalWrite(led, HIGH);
 }
 
 void loop(){
