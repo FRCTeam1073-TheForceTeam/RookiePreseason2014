@@ -11,16 +11,15 @@ int red = 5;
 
 int blinkDelay = 500; //creates an int used for delay timing
 
-void cycle(int led){
-  digitalWrite(led, HIGH);
-  delay(blinkDelay);
-  digitalWrite(led, LOW);
-}
-
 void setup(){ //setup runs just once
   pinMode(red, OUTPUT); //establishes red as an output
   pinMode(yellow, OUTPUT); //establishes yellow as an output
   pinMode(green, OUTPUT); //establishes green as an output
+}
+void cycle(int led){
+  digitalWrite(led, HIGH);
+  delay(blinkDelay);
+  digitalWrite(led, LOW);
 }
 void loop(){
   cycle(green);

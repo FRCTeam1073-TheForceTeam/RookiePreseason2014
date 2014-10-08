@@ -5,23 +5,27 @@ Method stubs are pre-made. add your own code to complete the challenge!
 Program Task: Cycle the 3 leds of the robot, so that one led turns on, then the next, then the next
 Feel free to view the example program within the same folder if you need help!
 */
-int led =3;
-int led2 = 5;
-int led3 = 6; 
-void setup()
-{
-  pinMode (led, OUTPUT);
-  pinMode (led2, OUTPUT);
-  pinMode (led3, OUTPUT);
+int yellow = 3;
+int green = 6;
+int red = 5;
+int blinkDelay = 500;
+
+void setup(){
+  pinMode (yellow, OUTPUT);
+  pinMode (green, OUTPUT);
+  pinMode (red, OUTPUT);
+ 
 }
-void light (int state){
-digitalWrite (state, HIGH);
-delay (100);
-digitalWrite(state, LOW);
+
+void cycle(int led){
+  digitalWrite (led, HIGH);
+  delay (blinkDelay);
+  digitalWrite (led, LOW);
+  delay (blinkDelay);
 }
 void loop(){
-  light (led);
-  light (led2);
-  light (led3);
+  cycle(yellow);
+  cycle(green);
+  cycle(red);
 }
 
