@@ -13,10 +13,17 @@ void setup(){
   pinMode(yellowled, OUTPUT);
   pinMode(greenled, OUTPUT);
 }
-
+int time = 2000;
 void loop(){
   digitalWrite(redled, HIGH);
+  delay(time); 
+  digitalWrite(redled, LOW);
   digitalWrite(yellowled, HIGH);
+  delay(time);
+  digitalWrite(yellowled, LOW);
   digitalWrite(greenled, HIGH);
+  delay(time);
+  digitalWrite(greenled, LOW);
+  
 }
 
