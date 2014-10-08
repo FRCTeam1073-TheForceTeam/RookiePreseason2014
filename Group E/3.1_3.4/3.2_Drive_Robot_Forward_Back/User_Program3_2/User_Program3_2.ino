@@ -6,11 +6,23 @@ Program Task: drive the robot forward, and then backward, for two different time
 Feel free to view the example program within the same folder if you need help!
 */
 
+#include <Servo.h>;
+Servo left;
+Servo right;
+int delTime = 2000;
+
 void setup(){
-  //your code goes here
+  left.attach(10);
+  right.attach(9);
+ 
 }
 
 void loop(){
-  //also here
+  left.writeMicroseconds(1700);
+  right.writeMicroseconds(1300);
+  delay(delTime);
+  left.writeMicroseconds(1300);
+  right.writeMicroseconds(1700);
+  delay(delTime);
 }
 
