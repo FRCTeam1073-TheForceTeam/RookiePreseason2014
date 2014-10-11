@@ -6,11 +6,19 @@ Program Task: Dim the led on pin 5 using the potentiometer, so that as the poten
 Feel free to view the example program within the same folder if you need help!
 */
 
-void setup(){
-  //your code goes here
+int led = 5;
+int val = 0;
+int analogPin = A5;
+
+void setup()
+{
+  pinMode(led, OUTPUT); //your code goes here
 }
 
-void loop(){
-  //also here
+
+void loop()
+{
+  val = analogRead(analogPin);
+   analogWrite(led, val / 4); //also here
 }
 

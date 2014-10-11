@@ -6,11 +6,15 @@ Program Task: Have the robot vary its speed based on how far one turns the poten
 Feel free to view the example program within the same folder if you need help!
 */
 
-void setup(){
+
+
+void setup()
+{
   //your code goes here
 }
 
-void loop(){
+void loop()
+{
   //also here
 }
 
