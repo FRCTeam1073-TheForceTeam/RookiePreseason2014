@@ -6,22 +6,29 @@ Program Task: Have the LED on pin 5 turn on when the button is pressed
 Feel free to view the example program within the same folder if you need help!
 */
 int redled = 5;
-int button = 7;
-void setup(){
+int pushbutton = 7;
+
+void setup()
+{
   pinMode(redled, OUTPUT);
-  pinMode(button, INPUT);
+  pinMode(pushbutton, INPUT); 
 }
-
-void loop(){
-  if (digitalRead(button) == 1)
+void loop()
+{
+  if (digitalRead(pushbutton) == 1)
   {
-    digitalWrite(redled, HIGH);
-    
+    for (int i = 0; i <= 255; i = i+1)
+    {
+      analogWrite(redled, i);
+      delay(10);
+    }
   }
-  else 
-  {
-    digitalWrite(redled, LOW);
+  else
+  { 
+    for (int i = 255; i >= 0; i = i-1)
+    {  
+      analogWrite(redled, i);
+      delay(10);  
+    }
   }
-
 }
-

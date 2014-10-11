@@ -5,13 +5,14 @@ Method stubs are pre-made. add your own code to complete the challenge!
 Program Task: Dim the led on pin 5 using the potentiometer, so that as the potentiometer is turned, the brightness is adjusted
 Feel free to view the example program within the same folder if you need help!
 */
-int pmeter = 5;
-int redled = 5;
-void setup(){
-  pinMode(redled, OUTPUT);
-}
+int pemeter = 5;
+int led = 5;
 
+void setup(){
+  pinMode(led, OUTPUT);
+}
 void loop(){
-  analogWrite(redled, analogRead(pmeter)/4); 
+  analogWrite(led, analogRead(pemeter)/2);
+  
 }
 
