@@ -14,9 +14,9 @@ D3 = Left motor
 Servo left;
 Servo right;
 //Servo values
-int forward = 1700;
+int forward = 1550;
 int zero = 1500;
-int backward = 1300;
+int backward = 1450;
 //direct sensor values
 int sensorValue0 = 0; 
 int sensorValue1 = 0; 
@@ -24,7 +24,7 @@ int sensorValue1 = 0;
 int checkValue0 = 0;
 int checkValue1 = 0;
 //check constant
-float checkConstant = 2.5;
+float checkConstant = 1.5;
 //white value
 int lowValue0 = 0;
 int lowValue1 = 0;
@@ -164,20 +164,20 @@ void setup() {
   left.attach(10);
   right.attach(9);
   //delay(3000);
-  //calibrate();
-  printStuff();
+  calibrate();
+  //printStuff();
 }
 
 void loop() {
-  readSensors();
+  /*readSensors();
   Serial.print("left sensor: ");
   Serial.println(sensorValue0);
   Serial.print("right sensor: "); 
   Serial.println(sensorValue1);
-  Serial.println();
-  delay(1000);
-  //follow();
-  //readSensors();
+  Serial.println();*/
+  //delay(1000);
+  follow();
+  readSensors();
   //printStuff();
   //stopMotors();
 }
