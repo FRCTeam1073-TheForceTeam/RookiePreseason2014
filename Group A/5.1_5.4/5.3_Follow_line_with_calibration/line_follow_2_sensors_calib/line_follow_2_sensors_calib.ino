@@ -2,12 +2,9 @@
 Written and debugged for use on the Arduino boebot platform
 last updated: 10/20/14
 
-Program: Using both of the light sensors, follow a line
-
-IMPORTANT NOTE:
-This example program, in order to maintain compatibility with all the boebots, does not take any specific line sensor values. 
-The integers whiteValLeft and whiteValRight need to be set with your BoeBot's values.
-Simply replace the 0's with your values
+Program: Using both of the light sensors, follow a line AND:
+1) auto-calibrate (so that the user does not have to change the code)
+2) be able to continue moving when both line sensors see a black line
 */
 
 #include <Servo.h>
@@ -21,7 +18,7 @@ int rightLight = 1;
 int leftVal = 0;
 int rightVal = 0;
 
-int whiteValLeft = 0; //IMPORTANT - Add your white values here
+int whiteValLeft = 0; 
 int whiteValRight = 0;
 
 int forw = 1540;
@@ -34,6 +31,11 @@ void readSensors(){
   leftVal = analogRead(leftLight);
   rightVal = analogRead(rightLight);
 }
+void setWhite(){
+  whiteValLeft = analogRead(leftLight);
+  whiteValRight = analogRead(rightLight);
+}
+
 boolean isLeftLine(){
   boolean isLeft;
   if(leftVal >= (whiteValLeft + changeVal)){
@@ -58,10 +60,15 @@ boolean isRightLine(){
 void setup(){ //setup runs just once
   left.attach(10);
   right.attach(9); //mounts each servo on their respective digital pin
+  setWhite();
 }
 void loop(){ //loop runs over and over again
   readSensors();
-  if(isRightLine()){
+  if(isRightLine() && isLeftLine()){
+    left.writeMicroseconds(forw);
+    right.writeMicroseconds(rev);
+  }
+  else if(isRightLine()){
     left.writeMicroseconds(forw);
     right.writeMicroseconds(forw);
   }

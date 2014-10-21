@@ -1,6 +1,6 @@
 /* Software 1073 Example Program
 Written and debugged for use on the Arduino boebot platform
-last updated: 10/20/14
+last updated: 10/21/14
 
 Program: Using both of the light sensors, follow a line
 
@@ -61,11 +61,7 @@ void setup(){ //setup runs just once
 }
 void loop(){ //loop runs over and over again
   readSensors();
-  if(isRightLine() && isLeftLine()){
-    left.writeMicroseconds(forw);
-    right.writeMicroseconds(rev);
-  }
-  else if(isRightLine()){
+  if(isRightLine()){
     left.writeMicroseconds(forw);
     right.writeMicroseconds(forw);
   }
