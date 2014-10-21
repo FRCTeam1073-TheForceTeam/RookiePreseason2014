@@ -2,7 +2,7 @@
 Written and debugged for use on the Arduino boebot platform
 last updated: 10/20/14
 
-Program: Using both of the light sensors, drive the robot forward until one of the sensors sees a black line
+Program: Using both of the light sensors, follow a line
 
 IMPORTANT NOTE:
 This example program, in order to maintain compatibility with all the boebots, does not take any specific line sensor values. 
@@ -30,21 +30,45 @@ void readSensors(){
   leftVal = analogRead(leftLight);
   rightVal = analogRead(rightLight);
 }
+boolean isLeftLine(){
+  boolean isLeft;
+  if(leftVal >= (whiteValLeft + changeVal)){
+    isLeft = true;
+  }
+  if(rightVal >= (whiteValRight + changeVal)){
+    isLeft = false;
+  }
+  return isLeft;
+}
+boolean isRightLine(){
+  boolean isRight;
+  if(rightVal >= (whiteValRight + changeVal)){
+    isRight = true;
+  }
+  if(rightVal >= (whiteValRight + changeVal)){
+    isRight = false;
+  }
+  return isRight;
+}
+
 void setup(){ //setup runs just once
   left.attach(10);
   right.attach(9); //mounts each servo on their respective digital pin
 }
 void loop(){ //loop runs over and over again
-readSensors();
-  if((leftVal >= whiteValLeft + changeVal || rightVal >= whiteValRight + changeVal)){
-    left.writeMicroseconds(1500);
-    right.writeMicroseconds(1500);
+  readSensors();
+  if(isLeftLine()){
+    left.writeMicroseconds(1300);
+    right.writeMicroseconds(1300);
+  }
+  else if(isRightLine()){
+    left.writeMicroseconds(1700);
+    right.writeMicroseconds(1700);
   }
   else{
     left.writeMicroseconds(1700);
     right.writeMicroseconds(1300);
   }
-  
 }
 
 
