@@ -61,11 +61,7 @@ void setup(){ //setup runs just once
 }
 void loop(){ //loop runs over and over again
   readSensors();
-  if(isRightLine() && isLeftLine()){
-    left.writeMicroseconds(forw);
-    right.writeMicroseconds(rev);
-  }
-  else if(isRightLine()){
+  if(isRightLine()){
     left.writeMicroseconds(forw);
     right.writeMicroseconds(forw);
   }
