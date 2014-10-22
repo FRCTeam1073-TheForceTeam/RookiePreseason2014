@@ -8,22 +8,25 @@ Feel free to view the example program within the same folder if you need help!
 
 #include <Servo.h>
 
-Servo
 
+Servo left;
+Servo right;
 
-int rdrive = 9;
-int ldrive = 10;
-
-void setup(){
-  pinMode(rdrive, OUTPUT);
-  pinMode(ldrive, OUTPUT);
+void setup()
+{
+  left.attach(10);
+  right.attach(9);
+  left.writeMicroseconds(1700);
+  right.writeMicroseconds(1300);
+  delay(5000);
+  left.writeMicroseconds(1500);
+  right.writeMicroseconds(1500);
 }
 
-void loop(){
-  analogWrite(rdrive, 255); 
-  analogWrite(ldrive, 255);
-  delay(2000);
-  analogWrite(rdrive, 0);
-  analogWrite(ldrive, 0);
-}
 
+
+
+void loop()
+{
+  ;
+}
