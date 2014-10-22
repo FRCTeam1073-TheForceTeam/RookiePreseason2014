@@ -29,13 +29,13 @@ void loop(){
   Serial.println(cmDist);
   if (cmDist <= 10)
   {
-    right.Servo(poo);
-    left.Servo(poo);
+    right.writeMicroseconds(poo);
+    left.writeMicroseconds(poo);
   }
   else
   {
-    left.Servo(forward);
-    right.Servo(forwar);
+    left.writeMicroseconds(forward);
+    right.writeMicroseconds(forwar);
   }
   
     
