@@ -14,10 +14,16 @@ int potPin = 5;
 void setup(){
   left.attach(10);
   right.attach(9);
-  
+
 }
 
 void loop(){
-  
+  speedControl();  
 }
 
+void speedControl(){
+  int x = analogRead(potPin);
+  int c = x/7;
+  left.writeMicroseconds(1500 - c);
+  right.writeMicroseconds(1500 + c);
+}
