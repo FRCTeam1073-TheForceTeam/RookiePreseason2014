@@ -29,15 +29,15 @@ int rSenseVal = 0;
 
 int changeVal = 150;
 
-int prevRWhiteVal = 0;
-int prevLWhiteVal = 0;
+//int prevRWhiteVal = 0;
+//int prevLWhiteVal = 0;
 
 void autoCal(){
   for (int i; i <= 20; i++){
-    rWhiteVal = (analogRead(senseR) + prevRWhiteVal) /i;
-    lWhiteVal = (analogRead(senseL) + prevLWhiteVal) /i;
-    prevRWhiteVal = rWhiteVal;
-    prevLWhiteVal = lWhiteVal;
+    rWhiteVal = (analogRead(senseR) + prevRWhiteVal) / i;
+    lWhiteVal = (analogRead(senseL) + prevLWhiteVal) / i;
+    //prevRWhiteVal = rWhiteVal;
+    //prevLWhiteVal = lWhiteVal;
   }
 }
 
