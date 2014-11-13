@@ -8,10 +8,10 @@ Then place your robot on a black line and record the black values.
 Save these here. you will need them for the line following programs
 
 White Values:
-Left:
-Right:
+Left:1010
+Right:956
 
 Black Values:
-Left:
-Right:
+Left:66
+Right:74
 
