@@ -23,7 +23,7 @@ NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and
 int getDistance(){
   delay(delTime);
  unsigned int sonic = sonar.ping(); 
- unsigned int cmDist = sonic / US_ROUNTRIP_CM;
+ unsigned int cmDist = sonic / US_ROUNDTRIP_CM;
  return cmDist;
 }
 void Drive(){
