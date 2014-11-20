@@ -40,13 +40,13 @@ void Drive (){
   left.writeMicroseconds(1300);
   digitalWrite(ledg, HIGH);
   digitalWrite(ledr, LOW);  
- if (threshHold >= getDistance) {
-  /* right.writeMicroseconds(1500);
+ /*if (threshHold >= getDistance()){
+   right.writeMicroseconds(1500);
    left.writeMicroseconds(1500); 
    digitalWrite(ledr, HIGH);
    digitalWrite(ledg, LOW);
    delay(1000);*/
-    digitalWrite(ledg, LOW); 
+   /* digitalWrite(ledg, LOW); 
     digitalWrite(ledr, HIGH);
     delay(1000);
     right.writeMicroseconds(1700);
@@ -55,30 +55,17 @@ void Drive (){
     right.writeMicroseconds(1500);
     left.writeMicroseconds(1500);
     delay(1000);
-    //
+    */
     
- }
 }
 
 void Turn (){  
-
      right.writeMicroseconds(1700);
-     left.writeMicroseconds(1500);
-     delay (2000);
-     if (threshHold <= getDistance){
-       threshHold = 0;}
-       else{
+     left.writeMicroseconds(1700);
+     delay (670);
      right.writeMicroseconds(1500);
      left.writeMicroseconds(1500);
-     delay(1000);
-       }
-  }
-  right.writeMicroseconds(1700);
-  left.writeMicroseconds(1500);
-  delay (1000);
-  right.writeMicroseconds(1500);
-  left.writeMicroseconds(1500);
-
+     getDistance();
 }
 void setup(){
   pinMode(ledg, OUTPUT);
@@ -86,14 +73,13 @@ void setup(){
   pinMode(ledy, OUTPUT);
   right.attach(10);
   left.attach(9);
-  
 }
 
 void loop(){
-if (threshHold <= getDistance){
+if (getDistance() >= threshHold){
  Drive(); 
 }
-else{
+else if(getDistance() <= threshHold){
  Turn(); 
 }
 }
